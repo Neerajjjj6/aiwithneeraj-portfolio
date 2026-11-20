@@ -129,6 +129,9 @@ a, button { -webkit-tap-highlight-color: transparent; }
   .site-header nav a:not(.nav-cta), .nav-cta { font-size: 0.8125rem; }
   .nav-cta { padding: 0.45rem 0.85rem; }
 }
+@media (max-width: 420px) {
+  .site-header nav .nav-reel { display: none; } /* too narrow for another link; the section is still reached by scrolling */
+}
 @media (max-width: 380px) {
   .brand .dot { display: none; }
   .site-header nav ul { gap: 0.7rem; }
@@ -326,6 +329,21 @@ a.thumb:hover img { transform: scale(1.05); }
 .work-meta h3 { font-size: 1.75rem; margin: 0.7rem 0 0.35rem; }
 .work-meta p { color: var(--muted); font-size: var(--fs-sm); }
 .badge { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cyan); border: 1px solid rgba(92, 225, 255, 0.4); border-radius: 999px; padding: 0.2rem 0.75rem; }
+
+/* Latest reel */
+.reel { position: relative; overflow: hidden; }
+.reel::before { content: ""; position: absolute; left: 50%; top: 42%; width: min(70vw, 620px); aspect-ratio: 1; translate: -50% -50%; z-index: -1; pointer-events: none; background: radial-gradient(circle, rgba(47, 107, 255, 0.28), transparent 68%); filter: blur(50px); }
+.reel { isolation: isolate; }
+.reel-head { display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: clamp(2rem, 4vw, 3rem); }
+.reel-head .section-intro { margin-top: 1.2rem; max-width: 34rem; }
+.reel-card {
+  width: min(100%, 360px); margin: 0 auto; padding: 0; overflow: hidden;
+  border-radius: calc(var(--radius) + 4px); border: 1px solid var(--line-strong);
+  background: var(--surface); box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45), 0 0 0 6px rgba(92, 225, 255, 0.05);
+}
+.reel-card video { display: block; width: 100%; height: auto; aspect-ratio: 9 / 16; background: #000; object-fit: contain; }
+.reel-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.9rem; margin-top: clamp(1.75rem, 4vw, 2.5rem); }
+@media (max-width: 520px) { .reel-actions .btn { width: 100%; max-width: 360px; } }
 
 /* Contact */
 .contact { position: relative; overflow: hidden; background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(47, 107, 255, 0.3), transparent 70%), var(--bg); }

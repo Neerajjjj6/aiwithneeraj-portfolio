@@ -34,6 +34,7 @@ Then visit http://localhost:8000.
 | `css/style.css` | Design tokens, layout, components and animations |
 | `js/main.js` | Scroll reveals, active navigation link and hover effects |
 | `assets/reels/` | Reel thumbnails |
+| `assets/reel-*.mp4`, `assets/reel-*-poster.jpg` | Self-hosted video and poster for the "Latest reel" section |
 | `assets/fonts/` | Self-hosted fonts |
 | `assets/og-image.png` | Preview image used when the link is shared (1200 x 630 px) |
 
