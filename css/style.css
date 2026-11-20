@@ -219,7 +219,13 @@ a, button { -webkit-tap-highlight-color: transparent; }
 .stage .curve-comet { stroke-dasharray: 5 100; stroke-dashoffset: 5; opacity: 0; animation: comet 5s ease-in-out infinite; filter: drop-shadow(0 0 6px #5CE1FF); }
 @keyframes draw { 0% { stroke-dashoffset: 100; } 45%, 90% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 0; opacity: 0.3; } }
 @keyframes comet { 0%, 40% { stroke-dashoffset: 5; opacity: 0; } 45% { opacity: 1; } 90% { stroke-dashoffset: -100; opacity: 1; } 100% { stroke-dashoffset: -100; opacity: 0; } }
-.stage .handle { animation: blink 2.5s ease-in-out infinite; }
+.stage .contact-email { margin-top: 1rem; color: var(--muted); font-size: var(--fs-base, 1rem); overflow-wrap: anywhere; }
+.contact-email a { color: var(--cyan); text-decoration: none; border-bottom: 1px solid rgba(92, 225, 255, 0.4); transition: color 0.25s, border-color 0.25s; }
+.contact-email a:hover, .contact-email a:focus-visible { color: var(--text); border-color: var(--cyan); }
+.footer-email { margin-top: 0.4rem; overflow-wrap: anywhere; }
+.footer-email a { color: var(--muted); text-decoration: none; transition: color 0.25s; }
+.footer-email a:hover { color: var(--cyan); }
+.handle { animation: blink 2.5s ease-in-out infinite; }
 .stage .h-b { animation-delay: 0.8s; }
 @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
 
